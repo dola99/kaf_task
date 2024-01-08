@@ -48,7 +48,7 @@ class _RememberPasswordState extends State<RememberPassword> {
                     DisplayText(
                       textContent: 'Remember me',
                       textStyle:
-                          AppTextStyle.montserratFont.copyWith(height: 1),
+                          AppTextStyle().montserratFont.copyWith(height: 1),
                     )
                   ],
                 ),
@@ -56,7 +56,7 @@ class _RememberPasswordState extends State<RememberPassword> {
             ),
             DisplayText(
               textContent: 'Forgot Password?',
-              textStyle: AppTextStyle.montserratFont,
+              textStyle: AppTextStyle().montserratFont,
             ),
           ],
         ),

@@ -57,7 +57,7 @@ class LoginButton extends StatelessWidget {
           children: [
             DisplayText(
               textContent: 'Don’t have an account ?',
-              textStyle: AppTextStyle.montserratFont.copyWith(
+              textStyle: AppTextStyle().montserratFont.copyWith(
                   height: 1, fontSize: 14.sp, color: AppColors.grey_500),
             ),
             SizedBox(width: 6.w),
@@ -67,7 +67,7 @@ class LoginButton extends StatelessWidget {
               },
               child: DisplayText(
                 textContent: 'Register',
-                textStyle: AppTextStyle.montserratFont.copyWith(
+                textStyle: AppTextStyle().montserratFont.copyWith(
                     height: 1,
                     fontWeight: FontWeight.w600,
                     fontSize: 14.sp,

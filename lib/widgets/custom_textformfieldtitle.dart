@@ -28,13 +28,16 @@ class CustomTextFormFieldWithTitle extends StatelessWidget {
         children: [
           DisplayText(
             textContent: fieldTitle,
-            textStyle: AppTextStyle.montserratFont,
+            textStyle: AppTextStyle().montserratFont,
           ),
           SizedBox(
             height: 12.h,
           ),
-          CustomTextFormField(
-            params: params!,
+          SizedBox(
+            width: double.infinity,
+            child: CustomTextFormField(
+              params: params!,
+            ),
           ),
         ],
       ),

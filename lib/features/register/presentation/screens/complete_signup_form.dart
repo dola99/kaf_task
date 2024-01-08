@@ -146,7 +146,7 @@ class _CompleteSignupFormState extends State<CompleteSignupForm> {
               ),
               DisplayText(
                 textContent: 'Gender',
-                textStyle: AppTextStyle.montserratFont,
+                textStyle: AppTextStyle().montserratFont,
               ),
               SizedBox(
                 height: 14.h,
@@ -187,7 +187,7 @@ class _CompleteSignupFormState extends State<CompleteSignupForm> {
               ),
               DisplayText(
                 textContent: 'Skills',
-                textStyle: AppTextStyle.montserratFont,
+                textStyle: AppTextStyle().montserratFont,
               ),
               SizedBox(
                 height: 12.h,
@@ -216,7 +216,8 @@ class _CompleteSignupFormState extends State<CompleteSignupForm> {
                                         child: DisplayText(
                                           textContent:
                                               widget.userData!.tags[index].name,
-                                          textStyle: AppTextStyle.montserratFont
+                                          textStyle: AppTextStyle()
+                                              .montserratFont
                                               .copyWith(
                                                   fontSize: 12.sp,
                                                   height: 1,

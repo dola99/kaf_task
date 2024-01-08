@@ -96,16 +96,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 SizedBox(height: 5.h),
                 Text(
                   label,
-                  style: AppTextStyle.montserratFont.copyWith(
-                    fontWeight: NavbarCubit.get(context).currentPage == page
-                        ? FontWeight.w500
-                        : FontWeight.w400,
-                    color: NavbarCubit.get(context).currentPage == page
-                        ? AppColors.primaryColor
-                        : AppColors.grey_300,
-                    height: 1,
-                    fontSize: 12.sp,
-                  ),
+                  style: AppTextStyle().montserratFont.copyWith(
+                        fontWeight: NavbarCubit.get(context).currentPage == page
+                            ? FontWeight.w500
+                            : FontWeight.w400,
+                        color: NavbarCubit.get(context).currentPage == page
+                            ? AppColors.primaryColor
+                            : AppColors.grey_300,
+                        height: 1,
+                        fontSize: 12.sp,
+                      ),
                 ),
               ],
             ),

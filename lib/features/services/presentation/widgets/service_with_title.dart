@@ -18,7 +18,7 @@ class ServiceWithTitle extends StatelessWidget {
       children: [
         DisplayText(
           textContent: title,
-          textStyle: AppTextStyle.montserratFont.copyWith(
+          textStyle: AppTextStyle().montserratFont.copyWith(
               height: 1,
               fontWeight: FontWeight.w600,
               fontSize: 18.sp,

@@ -72,7 +72,7 @@ class _CheckBoxTitleState extends State<CheckBoxTitle> {
             ),
             DisplayText(
               textContent: widget.title,
-              textStyle: widget.textStyle ?? AppTextStyle.montserratFont,
+              textStyle: widget.textStyle ?? AppTextStyle().montserratFont,
             )
           ],
         ),

@@ -179,7 +179,7 @@ class MainInformationForm extends StatelessWidget {
             ),
             DisplayText(
               textContent: 'User Type',
-              textStyle: AppTextStyle.montserratFont,
+              textStyle: AppTextStyle().montserratFont,
             ),
             SizedBox(
               height: 12.h,

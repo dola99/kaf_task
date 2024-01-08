@@ -20,7 +20,7 @@ class SocialMediaWidgets extends StatelessWidget {
       children: [
         DisplayText(
           textContent: 'Favourite Social Media',
-          textStyle: AppTextStyle.montserratFont,
+          textStyle: AppTextStyle().montserratFont,
         ),
         SizedBox(
           height: 12.h,
@@ -43,26 +43,26 @@ class SocialMediaWidgets extends StatelessWidget {
             setState: true,
             title: AppDataCubit.get(context).socialMedia[index].label!,
             icon: const IconLoader(iconPath: AppIcons.facebookIcon),
-            textStyle: AppTextStyle.montserratFont.copyWith(
+            textStyle: AppTextStyle().montserratFont.copyWith(
                 fontSize: 14.sp, height: 1, color: AppColors.grey_900),
           ),
         ))
         //  CheckBoxTitle(
         //   title: 'Facebook',
         //   icon: const IconLoader(iconPath: AppIcons.facebookIcon),
-        //   textStyle: AppTextStyle.montserratFont
+        //   textStyle: AppTextStyle().montserratFont
         //       .copyWith(fontSize: 14.sp, height: 1, color: AppColors.grey_900),
         // ),
         // CheckBoxTitle(
         //   title: 'Twitter',
         //   icon: const IconLoader(iconPath: AppIcons.twitterIcon),
-        //   textStyle: AppTextStyle.montserratFont
+        //   textStyle: AppTextStyle().montserratFont
         //       .copyWith(fontSize: 14.sp, height: 1, color: AppColors.grey_900),
         // ),
         // CheckBoxTitle(
         //   title: 'LinkedIn',
         //   icon: const IconLoader(iconPath: AppIcons.linkedInIcon),
-        //   textStyle: AppTextStyle.montserratFont
+        //   textStyle: AppTextStyle().montserratFont
         //       .copyWith(fontSize: 14.sp, height: 1, color: AppColors.grey_900),
         // ),
       ],

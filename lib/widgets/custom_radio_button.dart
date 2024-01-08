@@ -60,7 +60,7 @@ class AnimatedRadioButton extends StatelessWidget {
             ),
             Text(
               title,
-              style: AppTextStyle.montserratFont.copyWith(
+              style: AppTextStyle().montserratFont.copyWith(
                   fontSize: 14.sp, height: 1, color: AppColors.grey_900),
             ),
           ],

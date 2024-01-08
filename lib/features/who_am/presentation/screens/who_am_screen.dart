@@ -48,7 +48,7 @@ class _UserState extends State<UserScreen> {
                     ),
                     DisplayText(
                       textContent: 'Who Am I',
-                      textStyle: AppTextStyle.montserratFont.copyWith(
+                      textStyle: AppTextStyle().montserratFont.copyWith(
                           height: 1,
                           fontWeight: FontWeight.w600,
                           fontSize: 18.sp,

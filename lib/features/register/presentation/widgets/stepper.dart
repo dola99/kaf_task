@@ -66,12 +66,12 @@ class MyStepperState extends State<MyStepper> {
           iconColor: Colors.red,
           leftTitlePadding: 45.w,
           rightTitlePadding: 63.w,
-          activeLabelStyle: AppTextStyle.montserratFont.copyWith(
+          activeLabelStyle: AppTextStyle().montserratFont.copyWith(
               fontWeight: FontWeight.w600,
               fontSize: 12.sp,
               height: 1,
               color: AppColors.primaryColor),
-          inActiveLabelStyle: AppTextStyle.montserratFont.copyWith(
+          inActiveLabelStyle: AppTextStyle().montserratFont.copyWith(
               fontWeight: FontWeight.w500,
               fontSize: 12.sp,
               height: 1,

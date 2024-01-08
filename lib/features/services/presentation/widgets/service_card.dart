@@ -59,7 +59,7 @@ class ServiceCard extends StatelessWidget {
                     child: Center(
                       child: DisplayText(
                         textContent: '\$ ${serviceProduct.price}',
-                        textStyle: AppTextStyle.montserratFont.copyWith(
+                        textStyle: AppTextStyle().montserratFont.copyWith(
                             height: 1,
                             fontSize: 12.sp,
                             color: AppColors.bgGrey_900),
@@ -74,7 +74,8 @@ class ServiceCard extends StatelessWidget {
             ),
             DisplayText(
               textContent: serviceProduct.title,
-              textStyle: AppTextStyle.montserratFont
+              textStyle: AppTextStyle()
+                  .montserratFont
                   .copyWith(height: 1, fontSize: 11, color: AppColors.grey_900),
             ),
             SizedBox(
@@ -88,7 +89,7 @@ class ServiceCard extends StatelessWidget {
                   padding: EdgeInsets.only(top: 8.h),
                   child: DisplayText(
                     textContent: '(${serviceProduct.averageRating})',
-                    textStyle: AppTextStyle.montserratFont.copyWith(
+                    textStyle: AppTextStyle().montserratFont.copyWith(
                         fontWeight: FontWeight.w400,
                         fontSize: 11.sp,
                         color: AppColors.warning),
@@ -112,7 +113,7 @@ class ServiceCard extends StatelessWidget {
                   padding: EdgeInsets.only(top: 8.h),
                   child: DisplayText(
                     textContent: '${serviceProduct.completedSalesCount}',
-                    textStyle: AppTextStyle.montserratFont.copyWith(
+                    textStyle: AppTextStyle().montserratFont.copyWith(
                         fontWeight: FontWeight.w400,
                         fontSize: 10.sp,
                         color: AppColors.grey_600),

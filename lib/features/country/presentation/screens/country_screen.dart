@@ -51,7 +51,7 @@ class _CountryScreenState extends State<CountryScreen> {
                       children: [
                         DisplayText(
                           textContent: 'Countries',
-                          textStyle: AppTextStyle.montserratFont.copyWith(
+                          textStyle: AppTextStyle().montserratFont.copyWith(
                               height: 1,
                               fontWeight: FontWeight.w600,
                               fontSize: 18.sp,

@@ -5,7 +5,7 @@ import 'package:kafiil_test/core/constant.dart';
 import 'package:kafiil_test/core/fonts.dart';
 
 class AppTheme {
-  static ThemeData appTheme = ThemeData(
+  ThemeData appTheme = ThemeData(
     useMaterial3: false,
     scaffoldBackgroundColor: AppColors.bgGrey_900,
     unselectedWidgetColor: AppColors.grey_300,
@@ -23,7 +23,8 @@ class AppTheme {
         borderRadius: BorderRadius.circular(16),
         borderSide: const BorderSide(color: AppColors.error_300, width: 1.0),
       ),
-      errorStyle: AppTextStyle.montserratFont
+      errorStyle: AppTextStyle()
+          .montserratFont
           .copyWith(color: AppColors.error_300, fontSize: 14, height: 1),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),

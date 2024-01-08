@@ -39,7 +39,7 @@ class CountryListView extends StatelessWidget {
                 children: [
                   DisplayText(
                     textContent: "Country",
-                    textStyle: AppTextStyle.montserratFont.copyWith(
+                    textStyle: AppTextStyle().montserratFont.copyWith(
                         fontWeight: FontWeight.w600,
                         color: AppColors.grey_500,
                         fontSize: 12,
@@ -47,7 +47,7 @@ class CountryListView extends StatelessWidget {
                   ),
                   DisplayText(
                     textContent: "Capital",
-                    textStyle: AppTextStyle.montserratFont.copyWith(
+                    textStyle: AppTextStyle().montserratFont.copyWith(
                         fontWeight: FontWeight.w600,
                         color: AppColors.grey_500,
                         fontSize: 12,
@@ -79,7 +79,7 @@ class CountryListView extends StatelessWidget {
                             width: 100.w,
                             child: DisplayText(
                               textContent: countryList[index].name,
-                              textStyle: AppTextStyle.montserratFont.copyWith(
+                              textStyle: AppTextStyle().montserratFont.copyWith(
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.grey_900,
                                   fontSize: 12,
@@ -90,7 +90,7 @@ class CountryListView extends StatelessWidget {
                             width: 50.w,
                             child: DisplayText(
                               textContent: countryList[index].capital,
-                              textStyle: AppTextStyle.montserratFont.copyWith(
+                              textStyle: AppTextStyle().montserratFont.copyWith(
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.grey_900,
                                   fontSize: 12,

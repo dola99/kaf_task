@@ -95,7 +95,7 @@ class _SalaryWidgetState extends State<SalaryWidget>
                   builder: (context, child) {
                     return DisplayText(
                       textContent: 'SAR ${_moneyValueAnimation.value}',
-                      textStyle: AppTextStyle.montserratFont.copyWith(
+                      textStyle: AppTextStyle().montserratFont.copyWith(
                           height: 1, fontSize: 16, color: AppColors.grey_800),
                     );
                   },

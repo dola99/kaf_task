@@ -48,7 +48,17 @@ class AppIcons {
 }
 
 class AppTextStyle {
-  static TextStyle montserratFont = TextStyle(
+  TextStyle montserratFont = TextStyle(
+    fontSize: 12.sp,
+    height: .13,
+    fontFamily: FontUitls.montserratFontFamily,
+    fontWeight: FontWeight.w500,
+    color: AppColors.bgGrey_500,
+  );
+}
+
+class AppTextStyle2 {
+  TextStyle montserratFont = TextStyle(
     fontSize: 12.sp,
     height: .13,
     fontFamily: FontUitls.montserratFontFamily,

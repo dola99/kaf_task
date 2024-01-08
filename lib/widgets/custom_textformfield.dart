@@ -29,11 +29,11 @@ class CustomTextFormField extends StatelessWidget {
       enabled: params.enabled,
       textInputAction: params.textInputAction,
       focusNode: params.focusNode,
-      style: AppTextStyle.montserratFont.copyWith(
-        fontSize: 16.sp,
-        height: 1,
-        color: AppColors.bgGrey_800,
-      ),
+      style: AppTextStyle().montserratFont.copyWith(
+            fontSize: 16.sp,
+            height: 1,
+            color: AppColors.bgGrey_800,
+          ),
       onFieldSubmitted: params.onFieldSubmitted,
       decoration: InputDecoration(
           prefixIcon: params.prefixIcon, suffixIcon: params.suffixIcon),

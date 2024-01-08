@@ -78,7 +78,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Kafill APP',
             debugShowCheckedModeBanner: false,
-            theme: AppTheme.appTheme,
+            theme: AppTheme().appTheme,
             home: const LoginScreen(),
           );
         },

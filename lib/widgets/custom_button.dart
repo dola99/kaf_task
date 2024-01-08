@@ -28,7 +28,7 @@ class CustomButton extends StatelessWidget {
         stateWidgets: {
           ButtonState.idle: Text(
             titleButton,
-            style: AppTextStyle.montserratFont.copyWith(
+            style: AppTextStyle().montserratFont.copyWith(
                 height: 1, fontSize: 14.sp, color: AppColors.bgGrey_50),
           ),
           ButtonState.loading: Container(
@@ -45,7 +45,7 @@ class CustomButton extends StatelessWidget {
               ),
               Text(
                 'Failed',
-                style: AppTextStyle.montserratFont.copyWith(
+                style: AppTextStyle().montserratFont.copyWith(
                     height: 1, fontSize: 14.sp, color: AppColors.error_300),
               ),
             ],
@@ -63,7 +63,7 @@ class CustomButton extends StatelessWidget {
               ),
               Text(
                 "Success",
-                style: AppTextStyle.montserratFont.copyWith(
+                style: AppTextStyle().montserratFont.copyWith(
                     height: 1, fontSize: 14.sp, color: AppColors.bgGrey_50),
               ),
             ],
