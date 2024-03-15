@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kafiil_test/core/constant.dart';
-import 'package:kafiil_test/features/register/cubit/register_cubit.dart';
 import 'package:kafiil_test/widgets/custom_text.dart';
 
 class CheckBoxTitle extends StatefulWidget {

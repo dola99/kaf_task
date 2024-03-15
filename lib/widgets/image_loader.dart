@@ -27,7 +27,13 @@ class ImageLoader extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius ?? 0),
         ),
         child: isFilePath
-            ? Image.file(File(imagePath))
+            ? ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.file(
+                  File(imagePath),
+                  fit: BoxFit.fill,
+                ),
+              )
             : isNetworkImage
                 ? CachedNetworkImage(
                     imageUrl: imagePath,

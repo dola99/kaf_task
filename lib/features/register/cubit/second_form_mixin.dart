@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kafiil_test/Model/register_model.dart';
@@ -28,9 +29,9 @@ mixin SecondFormMixin on Cubit<RegisterState> {
   }
 
   configFavourite(String socialSelected) {
-    print('test');
+    debugPrint('test');
     secondRegisterForm.favoriteSocialMedia = socialSelected;
-    print(secondRegisterForm.favoriteSocialMedia = socialSelected);
+    debugPrint(secondRegisterForm.favoriteSocialMedia = socialSelected);
   }
 
   configTage(int selectedTag) {
@@ -62,15 +63,17 @@ mixin SecondFormMixin on Cubit<RegisterState> {
     }
   }
 
-  bool validateSecondForm() {
+  String? validateSecondForm() {
     secondRegisterForm.tags = selectedTags;
     inspect(secondRegisterForm);
-    if (secondRegisterForm.favoriteSocialMedia!.isEmpty ||
-        secondRegisterForm.tags!.isEmpty ||
-        secondRegisterForm.birthDate == null ||
-        secondRegisterForm.avatarPath == null) {
-      return false;
-    }
-    return true;
+    // if (secondRegisterForm.favoriteSocialMedia == null ||
+    //     secondRegisterForm.favoriteSocialMedia?.length == 0) {
+    //   return 'you must Select at least one of Favorite Social Media';
+    // } else if (secondRegisterForm.tags!.isEmpty) {
+    //   return 'you must Select at least one of Skills';
+    // } else if (secondRegisterForm.avatarPath == null) {
+    //   return 'Profile Picture Required';
+    // }
+    return null;
   }
 }

@@ -7,7 +7,6 @@ import 'package:kafiil_test/Model/user_data.dart';
 import 'package:kafiil_test/core/constant.dart';
 import 'package:kafiil_test/core/helpers/custom_textfield_params.dart';
 import 'package:kafiil_test/core/routing.dart';
-import 'package:kafiil_test/features/appData/cubit/app_data_cubit.dart';
 import 'package:kafiil_test/features/register/cubit/register_cubit.dart';
 import 'package:kafiil_test/features/register/presentation/widgets/salary_widget.dart';
 import 'package:kafiil_test/features/register/presentation/widgets/select_tages.dart';
@@ -17,6 +16,7 @@ import 'package:kafiil_test/widgets/custom_radio_button.dart';
 import 'package:kafiil_test/widgets/custom_text.dart';
 import 'package:kafiil_test/widgets/custom_textformfieldtitle.dart';
 import 'package:kafiil_test/widgets/image_loader.dart';
+import 'package:kafiil_test/widgets/snack_bar.dart';
 import 'package:progress_state_button/progress_button.dart';
 
 class CompleteSignupForm extends StatefulWidget {
@@ -42,8 +42,8 @@ class _CompleteSignupFormState extends State<CompleteSignupForm> {
               widget.isShowOnly ? 0 : AppContentPadding.horizontalPadding),
       child: SingleChildScrollView(
         physics: widget.isShowOnly
-            ? NeverScrollableScrollPhysics()
-            : BouncingScrollPhysics(),
+            ? const NeverScrollableScrollPhysics()
+            : const BouncingScrollPhysics(),
         child: Form(
           key: _secondformKey,
           child: Column(
@@ -62,7 +62,7 @@ class _CompleteSignupFormState extends State<CompleteSignupForm> {
                     child: ImageLoader(
                       isFilePath:
                           cubit.secondRegisterForm.avatarPath?.path != null,
-                      size: const Size(83, 83),
+                      size: const Size(100, 100),
                       imagePath: cubit.secondRegisterForm.avatarPath?.path ??
                           AppImages.selectImage,
                     ),
@@ -120,13 +120,17 @@ class _CompleteSignupFormState extends State<CompleteSignupForm> {
                     fieldTitle: 'Birthday',
                     params: CustomTextFormFieldParams(
                         validator: (value) {
-                          DateTime parsedDateTime = DateTime.parse(value!);
+                          if (value != null && value.isNotEmpty) {
+                            DateTime parsedDateTime = DateTime.parse(value);
 
-                          if (parsedDateTime.isAfter(DateTime.now())) {
-                            // Date is in the future, return null
-                            return 'Enter Valid Date';
+                            if (parsedDateTime.isAfter(DateTime.now())) {
+                              // Date is in the future, return null
+                              return 'Enter Valid Date';
+                            } else {
+                              return null;
+                            }
                           } else {
-                            return null;
+                            return 'Enter Valid Date';
                           }
                         },
                         controller:
@@ -248,7 +252,7 @@ class _CompleteSignupFormState extends State<CompleteSignupForm> {
                   listener: (context, state) {},
                   builder: (context, state) {
                     return Align(
-                      alignment: Alignment.centerRight,
+                      alignment: Alignment.center,
                       child: CustomButton(
                           weight: 160.w,
                           buttonState: state is RegisterLoading
@@ -261,11 +265,18 @@ class _CompleteSignupFormState extends State<CompleteSignupForm> {
                           titleButton: 'Submit',
                           onPressed: () async {
                             if (_secondformKey.currentState!.validate()) {
-                              _secondformKey.currentState!.save();
-                              if (cubit.validateSecondForm()) {
-                                await cubit.register();
-                                await Future.delayed(Duration(seconds: 3));
-                                NavigatorHelper.pop(context);
+                              if (cubit.secondRegisterForm.avatarPath != null) {
+                                _secondformKey.currentState!.save();
+                                String? formValid = cubit.validateSecondForm();
+                                if (formValid == null) {
+                                  await cubit.register();
+                                } else {
+                                  ShowSnackBar.show(
+                                      context: context,
+                                      textColor: AppColors.error_300,
+                                      color: AppColors.error_50,
+                                      message: formValid);
+                                }
                               }
                             }
                           }),

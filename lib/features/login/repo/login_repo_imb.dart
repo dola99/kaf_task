@@ -30,7 +30,6 @@ class LoginRepoImb extends LoginRepo {
     } else if (response['error'] != null) {
       return Left({'error': response['error']['message']});
     } else {
-      print(response["access_token"]);
       await SharedPreferencesHelper.setToken(response["access_token"]);
       await SharedPreferencesHelper.init();
       return Right(GenericResponse<UserData>.fromJson(

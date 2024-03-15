@@ -40,14 +40,26 @@ class _SelectTageState extends State<SelectTage> {
                                 AppDataCubit.get(context)
                                     .tags[firstTagIndex]
                                     .value!)
-                            ? AppColors.primary100
+                            ? AppColors.primaryColor
                             : AppColors.bgGrey_50,
                         borderRadius: BorderRadius.circular(24)),
                     padding: const EdgeInsets.all(12),
                     child: Text(
-                        AppDataCubit.get(context).tags[firstTagIndex].label!),
+                      AppDataCubit.get(context).tags[firstTagIndex].label!,
+                      style: TextStyle(
+                        color: widget.registerCubit.selectedTags.contains(
+                                AppDataCubit.get(context)
+                                    .tags[firstTagIndex]
+                                    .value!)
+                            ? Colors.white
+                            : null,
+                      ),
+                    ),
                   ),
                 ),
+              SizedBox(
+                height: 5,
+              ),
               if (secondTagIndex < AppDataCubit.get(context).tags.length)
                 GestureDetector(
                   onTap: () {
@@ -62,12 +74,21 @@ class _SelectTageState extends State<SelectTage> {
                                 AppDataCubit.get(context)
                                     .tags[secondTagIndex]
                                     .value!)
-                            ? AppColors.primary100
+                            ? AppColors.primaryColor
                             : AppColors.bgGrey_50,
                         borderRadius: BorderRadius.circular(24)),
                     padding: const EdgeInsets.all(12),
                     child: Text(
-                        AppDataCubit.get(context).tags[secondTagIndex].label!),
+                      AppDataCubit.get(context).tags[secondTagIndex].label!,
+                      style: TextStyle(
+                        color: widget.registerCubit.selectedTags.contains(
+                                AppDataCubit.get(context)
+                                    .tags[secondTagIndex]
+                                    .value!)
+                            ? Colors.white
+                            : null,
+                      ),
+                    ),
                   ),
                 ),
             ],

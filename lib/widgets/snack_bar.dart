@@ -14,8 +14,9 @@ class ShowSnackBar {
         .showSnackBar(
           SnackBar(
             content: Text(message,
-                style:
-                    AppTextStyle().montserratFont.copyWith(color: textColor)),
+                style: AppTextStyle()
+                    .montserratFont
+                    .copyWith(color: textColor, height: 1)),
             backgroundColor: color,
             elevation: 1,
             duration: Duration(seconds: secondes ?? 3),

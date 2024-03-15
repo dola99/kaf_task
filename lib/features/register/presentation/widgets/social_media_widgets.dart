@@ -36,7 +36,7 @@ class SocialMediaWidgets extends StatelessWidget {
                 false,
             isShownOnly: isShowenOnly,
             onTap: () {
-              print('clicked');
+              debugPrint('clicked');
               RegisterCubit.get(context).configFavourite(
                   AppDataCubit.get(context).socialMedia[index].label!);
             },
